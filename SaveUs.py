@@ -6,8 +6,9 @@ pessoas_em_risco = [
     {"nome": "Maria", "idade": 82, "tipo": "Idosa", "prioridade": 'alta', "bairro": "Centro"},
     {"nome": "João", "idade": 5, "tipo": "Criança", "prioridade": 'média', "bairro": "Vila Nova"},
     {"nome": "Carlos", "idade": 47, "tipo": "PCD", "prioridade": 'alta', "bairro": "Jardim Azul"},
-    {"nome": "Luciana", "idade": 70, "tipo": "Idosa", "prioridade": 'baixa', "bairro": "Centro"},
+    {"nome": "Luciana", "idade": 30, "tipo": "Adulta", "prioridade": 'baixa', "bairro": "Centro"},
 ]
+
 # Função simples para limpar a tela do terminal.
 def limpar_tela():
     os.system('cls')
@@ -59,7 +60,7 @@ def listar_pessoas_risco():
 
     for pessoa in pessoas_em_risco:
         # Formata e exibe os dados de cada pessoa.
-        print(f'{contador}. Nome: {pessoa['nome']}, {pessoa['idade']} anos, {pessoa['tipo']}, prioridade {pessoa['prioridade']} - bairro: {pessoa['bairro']}')
+        print(f'{contador}. Nome: {pessoa["nome"]}, {pessoa["idade"]} anos, {pessoa["tipo"]}, prioridade {pessoa["prioridade"]} - bairro: {pessoa["bairro"]}')
         contador += 1
 
     # Pausa para o usuário poder ler antes de voltar ao menu.
@@ -77,7 +78,7 @@ def enviar_alertas(prioridade):
         if prioridade == pessoa['prioridade']:
             pessoa_encontrada = True
             contador += 1
-            print(f'{contador}. Nome: {pessoa['nome']}, {pessoa['idade']} anos, {pessoa['tipo']}, prioridade {pessoa['prioridade']} - bairro: {pessoa['bairro']}\n')
+            print(f'{contador}. Nome: {pessoa["nome"]}, {pessoa["idade"]} anos, {pessoa["tipo"]}, prioridade {pessoa["prioridade"]} - bairro: {pessoa["bairro"]}\n')
 
     if not pessoa_encontrada: # Se ninguém for encontrado com essa prioridade.
         print('⚠️ Nenhuma pessoa encontrada com essa prioridade.')
